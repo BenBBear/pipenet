@@ -12,8 +12,8 @@ using namespace std;
 
 typedef ap_axiu<32, 1, 1, 1> STREAM_ITEM;
 typedef hls::stream<STREAM_ITEM> AXI_STREAM;
-typedef hls::Scalar<3, unsigned char> RGB_PIXEL;
-typedef hls::Scalar<1, unsigned char> GRAY_PIXEL;
+typedef hls::Scalar<3, char> RGB_PIXEL;
+typedef hls::Scalar<1, char> GRAY_PIXEL;
 
 #define GRAY_PIXEL_TYPE HLS_8UC1
 #define RGB_PIXEL_TYPE HLS_8UC3
