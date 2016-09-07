@@ -1,7 +1,7 @@
 #include "../include/pipenet.h"
 
-typedef  unsigned char wT;
-typedef  unsigned char vT;
+typedef unsigned char wT;
+typedef unsigned char vT;
 #define K_1_NUM 2
 #define K_1_SIZE 3
 #define K_2_NUM 1
@@ -20,14 +20,15 @@ inline bool needToCompute(int row, int col, int H, int W, int K) {
   return (row > K - 1) && (row < H - K) && (col > K - 1) && (col < W - K);
 }
 
-wT filters_1[K_1_NUM][K_1_SIZE][K_1_SIZE] = {
+wT filters_1[K_1_NUM][K_1_SIZE][K_1_SIZE][1] = {
     1,  2, 1,  0, 1, 0, -1, -2, -1, //
     -1, 0, -1, 0, 2, 0, -1, 0,  -1,
 };
 wT biases_1[K_1_NUM] = {10, -5};
 
-wT filters_2[K_2_NUM][K_2_SIZE][K_2_SIZE] = {1, 0, 1, -1, 1, -1, 0, 1, 0};
-wT biases_2[K_2_NUM]  = {20};
+wT filters_2[K_2_NUM][K_2_SIZE][K_2_SIZE][2] = {1, 0, 1, -1, 1, -1, 0, 1, 0,
+                                                1, 0, 1, -1, 1, -1, 0, 1, 0};
+wT biases_2[K_2_NUM] = {20};
 
 void net(AXI_STREAM &INPUT_STREAM, AXI_STREAM &OUTPUT_STREAM) {
 
@@ -61,8 +62,8 @@ void net(AXI_STREAM &INPUT_STREAM, AXI_STREAM &OUTPUT_STREAM) {
 
       // compute_1 get
       compute_1 = needToCompute(row, col, IMG_H, IMG_W, K_1_SIZE);
-      conv<K_1_NUM, K_1_SIZE, 3, IMG_W, vT, wT>(pixel, output_conv_1, filters_1,
-                                         biases_1, true, compute_1, col);
+      conv<K_1_NUM, K_1_SIZE, 1, IMG_W, vT, wT>(pixel, output_conv_1, filters_1,
+                                                biases_1, true, compute_1, col);
 
       if (compute_1) {
         col_c2 = (col_c2 + 1) % (CONV_2_W);
@@ -71,9 +72,9 @@ void net(AXI_STREAM &INPUT_STREAM, AXI_STREAM &OUTPUT_STREAM) {
       }
       compute_2 = needToCompute(row_c2, col_c2, CONV_2_H, CONV_2_W, K_2_SIZE);
       // get compute_2
-      conv<K_2_NUM, K_2_SIZE, K_1_NUM, CONV_2_W, vT, wT>(output_conv_1, output_conv_2,
-                                               filters_2, biases_2, compute_1,
-                                               compute_2, col_c2);
+      conv<K_2_NUM, K_2_SIZE, K_1_NUM, CONV_2_W, vT, wT>(
+          output_conv_1, output_conv_2, filters_2, biases_2, compute_1,
+          compute_2, col_c2);
       // at the end, OUTPUT_STREAM << data
       if (compute_2) {
         STREAM_ITEM item;

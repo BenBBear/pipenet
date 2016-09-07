@@ -1,9 +1,8 @@
-template < unsigned int Knum,unsigned int Ksize, unsigned int InputChannelNum,
-		unsigned int InputWidth,
-          typename V, typename W>
-void conv(V input_pixel[InputChannelNum] , V  output_pixel[Knum],
-          W filters[Knum][Ksize][Ksize], W biases[Knum], bool save,
-          bool compute, unsigned int colId) {
+template <unsigned int Knum, unsigned int Ksize, unsigned int InputChannelNum,
+          unsigned int InputWidth, typename V, typename W>
+void conv(V input_pixel[InputChannelNum], V output_pixel[Knum],
+          W filters[Knum][Ksize][Ksize][InputChannelNum], W biases[Knum],
+          bool save, bool compute, unsigned int colId) {
   // input_pixel, output_pixel, filters, biases
   static V line_buffer[Ksize][InputWidth][InputChannelNum];
   static V window_buffer[Ksize][Ksize][InputChannelNum];
@@ -36,7 +35,7 @@ void conv(V input_pixel[InputChannelNum] , V  output_pixel[Knum],
       for (int i = -offset; i < offset + 1; i++)
         for (int j = -offset; j < offset + 1; j++)
           output_pixel[fn] +=
-              input_pixel[c] * filters[fn][i + offset][j + offset];
+              input_pixel[c] * filters[fn][i + offset][j + offset][c];
       output_pixel[fn] += biases[fn];
     }
 }
