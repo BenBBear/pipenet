@@ -1,0 +1,9 @@
+net_srem_32ns_6ns_6_36
+net_srem_32ns_6ns_32_36
+net_line_buffer
+net_line_buffer_1
+FIFO_net_img_input_data_stream_0_V
+FIFO_net_img_input_data_stream_1_V
+FIFO_net_img_input_data_stream_2_V
+net_AXIvideo2Mat_32_28_28_4096_s
+net

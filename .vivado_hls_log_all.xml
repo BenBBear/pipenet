@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;'phi' operation ('col') with incoming values : ('col', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'icmp' operation ('exitcond4', PipeNet/src/cpp/net.cpp:58) (1.91 ns)&#xA;&#x9;'select' operation ('col_assign_mid2', PipeNet/src/cpp/net.cpp:58) (1.37 ns)&#xA;&#x9;'icmp' operation ('tmp_26', PipeNet/src/cpp/net.cpp:58) (1.91 ns)&#xA;&#x9;'or' operation ('tmp_28', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_30', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_32', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_34', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_36', PipeNet/src/cpp/net.cpp:58) (1.37 ns)&#xA;&#x9;'or' operation ('tmp_38', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_40', PipeNet/src/cpp/net.cpp:58) (0 ns)&#xA;&#x9;'or' operation ('tmp_42', PipeNet/src/cpp/net.cpp:58) (1.37 ns)&#xA;&#x9;blocking operation 2.74 ns on control path)" projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.154-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated clock period (10.7ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.146-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 35, distance = 1)&#xA;   between 'store' operation (PipeNet/src/cpp/net.cpp:68) of variable 'col_c2', PipeNet/src/cpp/net.cpp:68 on local variable 'colId' and 'load' operation ('col_c2_1_load', PipeNet/src/cpp/net.cpp:68) on local variable 'colId'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.104-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)&#xA;   between 'store' operation (PipeNet/src/cpp/net.cpp:68) of variable 'col_c2', PipeNet/src/cpp/net.cpp:68 on local variable 'colId' and 'load' operation ('col_c2_1_load', PipeNet/src/cpp/net.cpp:68) on local variable 'colId'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.048-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)&#xA;   between 'store' operation (PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) of variable 'line_buffer_load_1', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74 on array 'line_buffer' and 'load' operation ('line_buffer_load', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) on array 'line_buffer'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.014-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)&#xA;   between 'store' operation (PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) of variable 'line_buffer_load_1', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74 on array 'line_buffer' and 'load' operation ('line_buffer_load', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) on array 'line_buffer'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.007-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)&#xA;   between 'store' operation (PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) of variable 'line_buffer_load_1', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74 on array 'line_buffer' and 'load' operation ('line_buffer_load', PipeNet/src/cpp/../include/./lib/conv.h:20->PipeNet/src/cpp/net.cpp:74) on array 'line_buffer'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:28.001-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'net_AXIvideo2Mat&lt;32, 28, 28, 4096>' to 'net_AXIvideo2Mat_32_28_28_4096_s'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:27.782-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::AXIvideo2Mat&lt;32, 28, 28, 4096>' (/opt/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/hls/hls_video_io.h:51) into AXIvideo2Mat&lt;32, 28, 28, 4096>." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:27.739-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-732] An internal stream 'img_input.data_stream[2].V' (PipeNet/src/cpp/net.cpp:52) with default size is used in a non-dataflow region, which may result in deadlock. Please consider to resize the stream using the directive 'set_directive_stream'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:26.245-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-732] An internal stream 'img_input.data_stream[1].V' (PipeNet/src/cpp/net.cpp:52) with default size is used in a non-dataflow region, which may result in deadlock. Please consider to resize the stream using the directive 'set_directive_stream'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:25.722-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-732] An internal stream 'img_input.data_stream[0].V' (PipeNet/src/cpp/net.cpp:52) with default size is used in a non-dataflow region, which may result in deadlock. Please consider to resize the stream using the directive 'set_directive_stream'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:25.718-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 28 for loop 'loop_height' in function 'hls::AXIvideo2Mat&lt;32, 28, 28, 4096>'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:25.714-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 28 for loop 'loop_width' in function 'hls::AXIvideo2Mat&lt;32, 28, 28, 4096>'." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:25.667-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'img_input.data_stream.V' (PipeNet/src/cpp/net.cpp:52)." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:25.164-0700" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] /opt/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/hls/hls_axi_io.h:49: variable-indexed range selection may cause suboptimal QoR." projectName="PipeNet" solutionName="solution1" date="2016-09-05T13:30:24.634-0700" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
